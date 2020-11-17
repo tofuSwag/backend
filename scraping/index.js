@@ -1,7 +1,7 @@
 const axios = require('axios');
 const express = require('express')
 const app = express()
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 const _ = require('lodash')
 const apikey = "009dc0c908d54a30859d80e6f8f3085f"
 const categories = [
