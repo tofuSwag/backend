@@ -1,0 +1,74 @@
+- Title // news api gives
+- Author // news api gives 
+- Content upto 400 words // news api gives
+- url   // news api gives
+- imageURl // news api gives
+
+- TAG //
+
+
+- Food Waste
+- Biodiversity Loss
+- Pollution 
+- Deforestation
+- Global Warming / Climate change
+- Food and Water Insecurity
+
+
+
+- ny times
+- times of india
+
+
+black boxes
+- news articles
+- filtering
+- api for sending these articles
+- 
+
+
+
+
+
+
+{
+  status: 'ok',
+  sources: [
+    {
+      id: 'google-news-in',
+      name: 'Google News (India)',
+      description: 'Comprehensive, up-to-date India news coverage, aggregated from sources all over the world by Google News.',
+      url: 'https://news.google.com',
+      category: 'general',
+      language: 'en',
+      country: 'in'
+    },
+    {
+      id: 'the-hindu',
+      name: 'The Hindu',
+      description: "The Hindu. latest news, analysis, comment, in-depth coverage of politics, business, sport, environment, cinema and arts from India's national newspaper.",
+      url: 'http://www.thehindu.com',
+      category: 'general',
+      language: 'en',
+      country: 'in'
+    },
+    {
+      id: 'the-times-of-india',
+      name: 'The Times of India',
+      description: 'Times of India brings the Latest News and Top Breaking headlines on Politics and Current Affairs in India and around the World, Sports, Business, Bollywood News and Entertainment, Science, Technology, Health and Fitness news, Cricket and opinions from leading columnists.',
+      url: 'http://timesofindia.indiatimes.com',
+      category: 'general',
+      language: 'en',
+      country: 'in'
+    }
+
+
+
+
+
+
+
+
+# ideas
+- change
+- ml to 
