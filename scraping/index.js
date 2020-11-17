@@ -13,7 +13,9 @@ const categories = [
     "Biodiversity Loss", 
     "Water Scarcity"
 ]
-
+app.get('/', (req, res) => {
+    res.send('aur ji pranam')
+})
 app.get('/getNews', async (req, res) => {
     try {
         articles = await getNews()
