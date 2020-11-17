@@ -1,14 +1,23 @@
 const axios = require('axios');
 const express = require('express')
 const app = express()
-const port = PROCESS.ENV.PORT || 3000
+const port = process.env.port || 3000
 const _ = require('lodash')
+const apikey = "009dc0c908d54a30859d80e6f8f3085f"
+const categories = [
+    "Pollution",
+    "Deforestation", 
+    "Food Waste", 
+    "Climate change", 
+    "Global Warming", 
+    "Biodiversity Loss", 
+    "Water Scarcity"
+]
 
 app.get('/getNews', async (req, res) => {
     try {
         articles = await getNews()
         res.send(articles)
-
     }
     catch(err) {
         console.error(err)
@@ -21,41 +30,41 @@ app.get('/getNews', async (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-/*
-- Food Waste
-- Biodiversity Loss
-- Pollution 
-- Deforestation
-- Global Warming / Climate change
-- Food and Water Insecurity
-*/
 
-// Want to use async/await? Add the `async` keyword to your outer function/method.
+
 async function getNews() {
-    /* 
-    Use /v2/everything
-    */
-    let apikey = "009dc0c908d54a30859d80e6f8f3085f"
+    
     const options = {
         headers: {'X-Api-Key': apikey}
-      };
-    //  encodeURIComponent(string)
-    let phrase = "Food Waste"
-    // let domains = "timesofindia.indiatimes.com"
-    // let domains = "nytimes.com"
-    // let domains = "timesofindia.indiatimes.com"
-    // let 
-    let query = phrase
-    let url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apikey}`
+    };
+    
+    
     try {
-        const response = await axios.get(url, options);
-        articles = (response.data.articles);
-        articles.forEach((article, index) => {
-            articles[index] = _.pick(article, ['source', 'title', 'author', 'url', 'urlToImage', 'content', 'description'])
-        })
-        
-        return articles
-
+        /*
+        Design choices
+        arr.forEach is not async aware
+        */
+       let articles = []
+       
+       for (var index = 0; index < categories.length; index++) {
+           let category = categories[index]
+           let url = `https://newsapi.org/v2/everything?q=${category}&apiKey=${apikey}`
+           let response = await axios.get(url, options);
+           let category_articles = response.data.articles; // array of articles
+           
+           category_articles = category_articles.map((article) => {
+            let tempObj = _.pick(article, ['source', 'title', 'author', 'url', 'urlToImage', 'content', 'description'])
+            tempObj['category'] = category
+            // console.log(tempObj)
+            return tempObj
+            })
+            
+            articles = _.concat(articles, category_articles)
+       }
+    //    console.log(articles)
+       return articles
+       
+    
     } catch (error) {
         console.error(error);
         throw new Error('An error occurred while executing the getNews endpoint.')
@@ -63,6 +72,8 @@ async function getNews() {
 }
 
 // /v2/sources
+
+// async getCategoryNewsArr(category) {}
 
 async function getSources() {
     /* 
@@ -81,5 +92,3 @@ async function getSources() {
         throw new Error('An error occured while getting sources')
     }
 }
-
-getNews()
