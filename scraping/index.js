@@ -17,9 +17,9 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
-//  updating at minute 1 and 3 of every hour
+//  updating at minute 1 every hour
 function execScheduler() {
-    cron.schedule('1,2,3 * * * *', () => {
+    cron.schedule('1 * * * *', () => {
         Article.addArticlesFromScratch()
         .then(() => console.log('articles added/updated in db'))
         .catch(err => console.error('Error when calling addArticlesFromScratch', err))
