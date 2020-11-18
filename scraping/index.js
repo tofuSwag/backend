@@ -4,11 +4,12 @@ app.use(express.json());
 const port = process.env.PORT || 3000
 const cron = require('node-cron')
 const Article = require('./db')
-
+const cors = require('cors')
 const homeRouter = require('./homeRouter')
 
 // ...
 
+app.use(cors())
 app.use('/', homeRouter)
 
 
