@@ -1,11 +1,28 @@
-Criteria
-- Food Waste
-- Biodiversity Loss
-- Pollution 
-- Deforestation
-- Global Warming
-- Climate change
-- Food and Water Insecurity
+
+
+
+- 
+
+ammends schema
+- home page link
+- base amount (if any)
+- type: (Yourself, donate/volunteer, campaign)
+- category: (Food Waste, Biodiversity Loss, Pollution, Deforestation, Global Warming, Climate change, Food and Water Insecurity)
+
+organisation review
+- news
+- ratings on other sites
+- recommenders
+- dns/whois lookup of site to check how recent it is.
+
+amount:
+- if not earning member:  don't show money options
+- if earning member:
+
+average salary (after tax), 1%, average annual raise
+yearsWorking
+price = 1% of (average salary + yearsWorking * avgAnnualRaise)
+
 
 
 https://www.charitywater.org/donate/the-spring?utm_medium=ppc&utm_source=adwords&utm_campaign=brand_keywords_row_paid_exact&gclid=Cj0KCQiAhs79BRD0ARIsAC6XpaViLFL0N94Qvo3KQvOU5vkkEkXiH5gd6P_JExjJ0r_u1qukjPJU0kUaAvFLEALw_wcB
