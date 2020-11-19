@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {Article} = require('../db')
+const Article = require('../models/articleModel')
 
 
 router.get('/', (req, res) => {

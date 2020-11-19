@@ -20,7 +20,7 @@ const ammendSchema = new mongoose.Schema({
     name: String,
     homepageLink: String,
     baseUSDAmount: Number,
-    type: String, // (Yourself, donate/volunteer, campaign)
+    type: String, // (habit, contribute, campaign)
     category: String, // (Food Waste, Biodiversity Loss, Pollution, Deforestation, Global Warming, Climate change, Food and Water Insecurity)
     description: String,
     scope: {
@@ -31,12 +31,28 @@ const ammendSchema = new mongoose.Schema({
     status: {   // auto assign 
         type: String,
         default: "unverified" // verified/unverified
-    }
+    },
+    donateLink: String,
+    volunteerLink: String,
+    link: String
+    // link: "https://"
 });
 
 ammendSchema.statics.addMasterAmmend = async function(userObj) {
     try {
-        obj = _.pick(userObj, ['name', 'homepageLink', 'baseUSDAmount', 'type', 'category', 'description', 'scope', 'coordinates'])
+        obj = _.pick(userObj, [
+            'name', 
+            'homepageLink', 
+            'baseUSDAmount', 
+            'type', 
+            'category', 
+            'description', 
+            'scope', 
+            'coordinates', 
+            'donateLink', 
+            'volunteerLink',
+            'changeLink'
+        ])
     
         obj.geohash = geohash.encode(obj.coordinates.lat, obj.coordinates.long)
         
@@ -72,6 +88,23 @@ ammendSchema.statics.getAmmends = async function(userLocation, filterLevel=4) {
         // getting all the verified ammends
         let ammends = await this.find({status:"verified"}, {_id: 0, __v:0, status:0})
         
+        ammends = ammends.map(am => {
+            console.log(am)
+            if (am.donateLink) {
+                console.log(`Am in donate link ${am}`)
+                am['link'] = am.donateLink
+                return am
+            }
+            else if (am.volunteerLink) {
+                am['link'] = am.volunteerLink
+                return am
+            }
+            else {
+                am['link'] = am.homepageLink
+                return am
+            }
+        })
+        
         // if location not given just return all
         if (!userLocation) {
             return ammends
@@ -84,6 +117,7 @@ ammendSchema.statics.getAmmends = async function(userLocation, filterLevel=4) {
 
         // need all global BUT closer local
         ammends = ammends.filter((am) => {
+
             if (am.scope === "global") {
                 return am
             }
@@ -96,11 +130,14 @@ ammendSchema.statics.getAmmends = async function(userLocation, filterLevel=4) {
             }
         })
         
+
         // return ammends filtered by location
         if (ammends.length === 0 && filterLevel > 0)
         {
             return this.getAmmends(userLocation, filterLevel-1)
         }
+
+    
         return ammends
     }
     catch(err) {

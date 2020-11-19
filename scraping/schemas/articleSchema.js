@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const axios = require('axios');
 const _ = require('lodash')
+const Ammend = require('../models/ammendModel')
 
 const apikey = "0744dcd782004b63a83a55a58ceb9f63" // this.is.rahul.tandon walli
 
@@ -25,7 +26,9 @@ const articleSchema = new mongoose.Schema({
     description: String,
     urlToImage: String,
     publishedAt: Date,
-    category: String
+    category: String,
+    donateLink: String,
+    volunteerLink: String
 });
 
 articleSchema.statics.addArticlesFromScratch = async function() {    
@@ -105,6 +108,28 @@ articleSchema.statics.getSources = async function() {
 articleSchema.statics.getNews = async function() {
     let articles = await this.find({}, {_id: 0, __v:0})
     return articles
+
+}
+
+articleSchema.statics.assignAmmends = async function() {
+    // getting all ammend models
+    let allAmmends
+    for(index = 0; index < categories.length; index++) {
+        allAmmends[category] = await Ammend.find({category})
+    }
+    
+    let allArticles = this.find({})
+    
+    /*
+    Chose to use .map because 1-to-1 ratio would  work here
+    and it is async-await aware
+    */
+    allArticles.map(async (article, index) => {
+        let random_ammend = allAmmends[Math.floor(Math.random() * allAmmends.length)];
+        article.volunteerLink = random_ammend.volunteerLink
+        article.donateLink = random_ammend.donateLink
+        await article.save()
+    })
 
 }
 
