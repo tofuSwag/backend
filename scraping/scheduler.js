@@ -2,15 +2,19 @@ const cron = require('node-cron')
 const Article = require('./db')
 
 
-function execScheduler() {
-    
+async function execScheduler() {
+    try {
+
+    }
+    catch(err) {
+        console.error("Error in execScheduler function", err)
+    }
     //  updating at minute 1 every hour
-    cron.schedule('1 0/3 * * *', () => {
+    await cron.schedule('1 0/3 * * *', () => { 
         Article.addArticlesFromScratch()
-        .then(() => console.log('articles added/updated in db'))
-        .catch(err => console.error('Error when calling addArticlesFromScratch', err))
+        Article.pruneArticles()
     })
-    console.log("cron job scheduled")
+
 }
 
 /*

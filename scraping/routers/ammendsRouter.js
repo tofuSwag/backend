@@ -2,24 +2,32 @@ const express = require('express')
 const router = express.Router()
 const {Ammend} = require('../db')
 
-
 router.get('/getAmmends/', async (req, res) => {
     try {
-        let userLocation = req.body
-        if (userLocation.lat && userLocation.long) {
-            let ammends =  await Ammend.getAmmends(userLocation)
-            res.send(ammends)
-        }
-        else {
-            let ammends = await Ammend.getAmmends()
-            res.send(ammends)
-        }
+        let ammends = await Ammend.getAmmends()
+        res.send(ammends)
+    }
+    catch(err) {
+        console.error(err)
+        res.status(500)
+        res.send('An error occured in the STANDARD /getAmmends endpoint handler')
+    }
+})
+router.get('/getAmmends/:lat/:long', async (req, res) => {
+    try {
+        let lat = req.params.lat
+        let long = req.params.long
+        let ammends =  await Ammend.getAmmends({
+            lat: Number(lat), 
+            long: Number(long)
+            })
+        res.send(ammends)
 
     }
     catch(err) {
         console.error(err)
         res.status(500)
-        res.send('An error occured in the /getAmmends endpoint handler')
+        res.send('An error occured in the LAT & LONG /getAmmends endpoint handler')
     }
 })
 
