@@ -5,7 +5,7 @@ https://www.unenvironment.org/beatpollution/governments
 
 - 
 
-ammends schema
+ammends schema 
 - home page link
 - base amount (if any)
 - type: (Yourself, donate/volunteer, campaign)
