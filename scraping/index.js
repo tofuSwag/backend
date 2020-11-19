@@ -25,6 +25,11 @@ execScheduler()
 
 const {Article} = require('./db')
 
-Article.pruneArticles()
-.then("pruned articles")
-.catch(err => console.error("error while pruning articles where author property had value null", err))
+Article.addArticlesFromScratch()
+.then(() => {
+  console.log('articles added/updated in db')
+  Article.pruneArticles()
+})
+.then(() => console.log("pruned articles"))
+.catch(err => console.error('Error when calling setting up db in index.js', err))
+

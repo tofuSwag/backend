@@ -20,7 +20,6 @@ const articleSchema = new mongoose.Schema({
     author: String,
     content: String,
     url: String,
-    imageURl: String,
     tags: String,
     source: Object,
     description: String,
@@ -114,17 +113,17 @@ articleSchema.statics.pruneArticles = async function() {
         // all articles with author name null or author name > 55
         await this.deleteMany(
             {$or : [
-                {title: null},
+                // {title: null},
                 {author: null },
                 {content: null},
                 {url: null},
-                {imageURl: null},
-                {tags: null},
-                {source: null},
+                // {imageURl: null},
+                // {tags: null},
+                // {source: null},
                 {description: null},
                 {urlToImage: null},
-                {publishedAt: null},
-                {category: null},
+                // {publishedAt: null},
+                // {category: null},
                 {
                     $expr: { "$gt": [ { "$strLenCP": "$author" }, 50 ] }
                 }

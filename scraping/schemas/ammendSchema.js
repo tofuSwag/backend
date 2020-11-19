@@ -52,10 +52,10 @@ ammendSchema.statics.addMasterAmmend = async function(userObj) {
 
 ammendSchema.statics.addProspectiveAmmend = async function(userObj) {
    try {
-        obj = _pick(userObj, ['homepageLink', 'baseUSDAmount', 'type', 'category', 'description', 'scope', 'coordinates'])
+        obj = _.pick(userObj, ['homepageLink', 'baseUSDAmount', 'type', 'category', 'description', 'scope', 'coordinates'])
         
         obj.geohash = geohash.encode(obj.lat, obj.long)
-        
+        obj.type = "contribute"
         // status will be UNVERIFIED by default
 
         await this.create(obj)
