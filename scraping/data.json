@@ -1,0 +1,18 @@
+ammends schema
+- home page link
+- base amount (if any)
+- type: (Yourself, donate/volunteer, campaign)
+- category: (Food Waste, Biodiversity Loss, Pollution, Deforestation, Global Warming, Climate change, Food and Water Insecurity)
+"Pollution", "Deforestation", "Food Waste",  "Climate change", "Global Warming", "Biodiversity Loss", 
+    "Water Scarcity"
+
+
+[
+    {
+        homePageLink: "",
+        // inr
+        baseAmount:,
+        type: contribute,
+        category: "Food and Water In"
+    }
+]

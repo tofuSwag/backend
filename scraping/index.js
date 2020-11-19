@@ -1,30 +1,30 @@
 const express = require('express')
 const app = express()
-app.use(express.json()); 
 const port = process.env.PORT || 3000
-const cron = require('node-cron')
-const Article = require('./db')
 const cors = require('cors')
-const homeRouter = require('./homeRouter')
+app.use(express.json()); 
+app.use(cors())
 
+
+const execScheduler = require('./scheduler')
+const articlesRouter = require('./routers/articlesRouter')
+const ammendsRouter = require('./routers/ammendsRouter.js')
 // ...
 
-app.use(cors())
-app.use('/', homeRouter)
 
+app.use('/', articlesRouter)
+
+app.use('/ammends', ammendsRouter)
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
-//  updating at minute 1 every hour
-function execScheduler() {
-    cron.schedule('1 * * * *', () => {
-        Article.addArticlesFromScratch()
-        .then(() => console.log('articles added/updated in db'))
-        .catch(err => console.error('Error when calling addArticlesFromScratch', err))
-    })
-    console.log("cron job scheduled")
-}
-
+// scheduling updates to the DB
 execScheduler()
+
+const {Article} = require('./db')
+
+Article.pruneArticles()
+.then("pruned articles")
+.catch(err => console.error("error while pruning articles where author property had value null", err))

@@ -11,6 +11,23 @@ caused by plastic, pollution and notices/faces them in daily life i.e. has a per
 - db backup and limited queries to NewsAPI
 
 - Bonus: Analytics middleware
+- Future stuff:
+    - Videos/other media
+    - Volunteer program
+
+
+
+
+TODOS FROM jivu chat
+- make ammends api (post form stuff) // SHOULD WORK
+- do some manual work for ammends i.e. manually add some data (will get results on GET request to ammends api)
+- add ammend field to getNews 
+- add more chars to getNews results
+- change.org scrape
+- figure out geography thingie
+
+
+
 
 
 What can we do:
@@ -18,8 +35,6 @@ What can we do:
 - Donate to organisation =>
 - Approach governement organisations: start petitions => Change.org
 - 
-
-
 
 Data Schema
 

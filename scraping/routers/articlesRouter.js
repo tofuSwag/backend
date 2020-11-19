@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const Article = require('./db')
+const {Article} = require('../db')
+
 
 router.get('/', (req, res) => {
     res.send('aur ji pranam')
@@ -19,5 +20,6 @@ router.get('/getNews', async (req, res) => {
     }
   
 })
+
 
 module.exports = router
