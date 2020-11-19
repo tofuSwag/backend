@@ -1,0 +1,115 @@
+[
+    {
+        "name": "Planet Water Foundation",
+        "homepageLink": "https://planet-water.org/", 
+        "baseUSDAmount": 10, 
+        "type": "donate", 
+        "category": "Water Scarcity",
+        "description": "We are a U.S.-based, non-profit organization focused on bringing clean water to the world’s most impoverished communities through the installation of community-based water filtration systems and implementing our Water-Health and Hygiene Education programs. Our projects are focused on schools, children, and rural communities across the Asia-Pacific Region and Latin America.", 
+        "scope": "global", 
+        "coordinates": {
+            "lat": 33.662900, 
+            "long": -112.018200
+        }, 
+        "donateLink" :"https://planet-water.org/About#donate", 
+        "volunteerLink" : "",
+        "changeLink": ""
+    },
+    {
+        "name": "Plastic Oceans",
+        "homepageLink": "https://plasticoceans.org/", 
+        "baseUSDAmount": 10, 
+        "type": "contribute", 
+        "category": "Pollution",
+        "description": "Plastic Oceans International is a US-based 501 (c)(3) non-profit organization whose goal is to end plastic pollution and to foster sustainable communities worldwide. We operate with the belief that we can and must act locally in order to create change globally, and we do so through four key pillars of activity: Education, Activism, Advocacy and Science.", 
+        "scope": "global", 
+        "coordinates": {
+            "lat": 37.090200,
+            "long":  -95.712900
+        }, 
+        "donateLink" :"https://plasticoceans.org/donate/", 
+        "volunteerLink" : "https://plasticoceans.org/volunteer/",
+        "changeLink": ""
+    },
+    {
+        "name": "World Wildlife Fund for Nature",
+        "homepageLink": "https://wwf.panda.org/", 
+        "baseUSDAmount": 6, 
+        "type": "contribute", 
+        "category": "Biodiversity Loss",
+        "description": "WWF is the world’s leading independent conservation organisation. Our mission is to create a world where people and wildlife can thrive together. To achieve our mission, we're finding ways to help transform the future for the world’s wildlife, rivers, forests and seas; pushing for a reduction in carbon emissions that will avoid catastrophic climate change; and pressing for measures to help people live sustainably, within the means of our one planet. We’re acting now to make this happen.", 
+        "scope": "global", 
+        "coordinates": {
+            "lat": 46.420300, 
+            "long": 6.269900
+        }, 
+        "donateLink" :"https://support.wwf.org.uk/donate", 
+        "volunteerLink" : "https://support.wwf.org.uk/adoptions",
+        "changeLink": ""
+    },
+    {
+        "name": "Environmental Defense Fund",
+        "homepageLink": "https://www.edf.org/", 
+        "baseUSDAmount": 15, 
+        "type": "contribute", 
+        "category": "",
+        "description": "We began in 1967, as a scrappy group of scientists and a lawyer on Long Island, New York, fighting to save osprey from the toxic pesticide DDT. Using scientific evidence, our founders got DDT banned nationwide. Today, we’re one of the world's leading environmental organizations. In the U.S., Fortune magazine called our board one of the country's most influential nonprofit boards.And science still guides everything we do.", 
+        "scope": "global", 
+        "coordinates": {
+            "lat": 38.919100,
+            "long":  -77.036300
+        }, 
+        "donateLink" :"http://edf.org/donate", 
+        "volunteerLink" : "https://www.edf.org/get-involved",
+        "changeLink": ""
+    },
+    {
+        "name": "The Robin Hood Army",
+        "homepageLink": "https://robinhoodarmy.com/", 
+        "baseUSDAmount": 0, 
+        "type": "contribute", 
+        "category": "Food Waste",
+        "description": "The Robin Hood Army is a volunteer based, zero-funds organization that works to get surplus food from restaurants and the community to serve less fortunate people.Our local chapters are run by friends and colleagues, who hope to create a difference in their own unique way. For example, restaurants in the neighbourhood Green Park, will contribute to the homeless of the locality, through volunteers who live in Green Park. Our “Robins” are largely students and young working professionals – everyone does this in their free time. The lesser fortunate sections of society we serve include homeless families, orphanages, patients from public hospitals, and old age homes.", 
+        "scope": "global", 
+        "coordinates": {
+            "lat": 28.704100, 
+            "long":  77.102500
+        }, 
+        "donateLink" :"", 
+        "volunteerLink" : "https://robinhoodarmy.com/volunteer-sign-up",
+        "changeLink": ""
+    },
+    {
+        "name": "The Greater Good",
+        "homepageLink": "https://greatergood.com/", 
+        "baseUSDAmount": 10, 
+        "type": "contribute", 
+        "category": "Deforestation",
+        "description": "Our community of millions and network of cause-focused sites make a real impact every day! Together, we've raised more than $60 million for people, pets, and the planet and made more than $50 million in artisan payments. Find the cause you care about and get involved!.", 
+        "scope": "global", 
+        "coordinates": {
+            "lat": 47.606200, 
+            "long": -122.332100
+        }, 
+        "donateLink" :"https://greatergood.com/clicktogive/ggc/home", 
+        "volunteerLink" : "",
+        "changeLink": ""
+    },
+    {
+        "name": "Intergovernmental Panel on Climate Change",
+        "homepageLink": "https://www.ipcc.ch", 
+        "baseUSDAmount": 10, 
+        "type": "contribute", 
+        "category": "Climate change",
+        "description": "The IPCC was created to provide policymakers with regular scientific assessments on climate change, its implications and potential future risks, as well as to put forward adaptation and mitigation options. Through its assessments, the IPCC determines the state of knowledge on climate change. It identifies where there is agreement in the scientific community on topics related to climate change, and where further research is needed. The reports are drafted and reviewed in several stages, thus guaranteeing objectivity and transparency.  The IPCC does not conduct its own research. IPCC reports are neutral, policy-relevant but not policy-prescriptive", 
+        "scope": "global", 
+        "coordinates": {
+            "lat": 46.204400,
+            "long":  6.143200
+        }, 
+        "donateLink" :"", 
+        "volunteerLink" : "https://www.ipcc.ch/about/engage_with_the_ipcc/",
+        "changeLink": ""
+    }
+
+]

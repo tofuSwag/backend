@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const {Ammend} = require('../db')
+const Ammend = require('../models/ammendModel')
 
-router.get('/getAmmends/', async (req, res) => {
+router.get('/getAmmends', async (req, res) => {
     try {
         let ammends = await Ammend.getAmmends()
         res.send(ammends)
