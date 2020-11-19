@@ -69,14 +69,11 @@ ammendSchema.statics.addProspectiveAmmend = async function(userObj) {
 ammendSchema.statics.getAmmends = async function(userLocation, filterLevel=4) {
     
     try {
-
-
         // getting all the verified ammends
         let ammends = await this.find({status:"verified"}, {_id: 0, __v:0, status:0})
         
         // if location not given just return all
         if (!userLocation) {
-            console.log("user location not given so giving all ammends")
             return ammends
         }
 
