@@ -48,6 +48,7 @@ Next we prioritised out of these 3 and decided that `organisations` should be th
   - Mongoose
   - NewsAPI (development addition)
   - node-cron - backups to the database every 3 hrs to decrease calls to NewsAPI _drastically_.
+  - ngeohash - for finding Ammend organisations nearby the user.
 
 # Future plans of the application
 
