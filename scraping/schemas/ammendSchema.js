@@ -69,7 +69,7 @@ ammendSchema.statics.addProspectiveAmmend = async function(userObj) {
 ammendSchema.statics.getAmmends = async function(userLocation, filterLevel=4) {
     
     try {
-        console.log("filter level is" + filterLevel)
+
 
         // getting all the verified ammends
         let ammends = await this.find({status:"verified"}, {_id: 0, __v:0, status:0})
@@ -83,7 +83,7 @@ ammendSchema.statics.getAmmends = async function(userLocation, filterLevel=4) {
         /* IMPORTANT!
         Haven't done any verification of userLocation obj right now
         */
-        let userHash = geohash.encode(userLocation.lat, userLocation.long)
+        let userHash = geohash.encode(Number(userLocation.lat), Number(userLocation.long))
 
         // need all global BUT closer local
         ammends = ammends.filter((am) => {
