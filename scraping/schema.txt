@@ -7,7 +7,7 @@ using "volunteers" which will be incentivized using certificates. Will make an "
 - NOT doing giveindia.org for a focus on directly noticeable problems i.e. 
 a person in Noida wouldn't know problems of rural Rajasthan, but he/she would know problems 
 caused by plastic, pollution and notices/faces them in daily life i.e. has a personal connect.
-
+ 
 - db backup and limited queries to NewsAPI
 
 - Bonus: Analytics middleware
