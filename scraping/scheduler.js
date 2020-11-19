@@ -1,6 +1,5 @@
 const cron = require('node-cron')
 const Article = require('./db')
-const articleSchema = require('./schemas/articleSchema')
 
 
 function execScheduler() {
