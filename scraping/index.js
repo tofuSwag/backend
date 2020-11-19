@@ -28,7 +28,8 @@ app.listen(port, () => console.log(`Example app listening at http://localhost:${
 // execScheduler()
 // .then(() => console.log("cron job scheduled"))
 // .catch(err => (console.error("Issue in execScheduler call", err)))
-// Article.assignAmends()
-// .then(() => console.log("Ammends assigned to articles"))
-// .catch(err => )
+
+Article.assignAmmends()
+.then(() => console.log("Ammends assigned to articles"))
+.catch(err => console.error('error in assign ammends call', err))
 

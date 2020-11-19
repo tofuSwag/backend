@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const axios = require('axios');
 const _ = require('lodash')
-const Ammend = require('../models/ammendModel')
+const Ammend = require('../models/ammendModel');
+const { random } = require('lodash');
 
 const apikey = "0744dcd782004b63a83a55a58ceb9f63" // this.is.rahul.tandon walli
 
@@ -112,24 +113,48 @@ articleSchema.statics.getNews = async function() {
 }
 
 articleSchema.statics.assignAmmends = async function() {
-    // getting all ammend models
-    let allAmmends
+    try {
+
+         // getting all ammend models
+    let allAmmends = {}
     for(index = 0; index < categories.length; index++) {
-        allAmmends[category] = await Ammend.find({category})
+        let category = categories[index]
+        allAmmends[category] = await Ammend.find({category: category})
     }
     
-    let allArticles = this.find({})
+
+    let allArticles = await this.find({})
     
     /*
     Chose to use .map because 1-to-1 ratio would  work here
     and it is async-await aware
     */
-    allArticles.map(async (article, index) => {
-        let random_ammend = allAmmends[Math.floor(Math.random() * allAmmends.length)];
+//    console.log(allArticles)
+   for (var index = 0; index < allArticles.length; index++)
+   {
+        let article = allArticles[index]
+        // let random_num = Math.floor(Math.random() * allAmmends.length)
+        // console.log(allAmmends)
+        let random_ammend = allAmmends[article.category][0];
+
         article.volunteerLink = random_ammend.volunteerLink
         article.donateLink = random_ammend.donateLink
+
+        if (! article.volunteerLink) {
+            article.volunteerLink = random_ammend.donateLink
+        }
+        else if (! article.donateLink) {
+
+            article.donateLink = random_ammend.volunteerLink
+        }
+        
         await article.save()
-    })
+   }
+    }
+    catch(err) {
+        console.error(err)
+    }
+   
 
 }
 
