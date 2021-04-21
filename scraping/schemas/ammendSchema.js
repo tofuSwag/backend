@@ -2,8 +2,6 @@ const _ = require('lodash')
 const mongoose = require('mongoose')
 var geohash = require('ngeohash');
 
-// const apikey = "009dc0c908d54a30859d80e6f8f3085f" // jesuisrahult walli
-const apikey = "0744dcd782004b63a83a55a58ceb9f63" // this.is.rahul.tandon walli
 
 const categories = [
     "Pollution",

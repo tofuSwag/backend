@@ -3,12 +3,12 @@ const app = express()
 const mongoose = require('mongoose')
 const cors = require('cors')
 
-// const execScheduler = require('./scheduler')
+const execScheduler = require('./scheduler')
 const articlesRouter = require('./routers/articlesRouter')
 const ammendsRouter = require('./routers/ammendsRouter.js')
 const Article = require('./models/articleModel')
 
-const db_url = process.env.db_url || "mongodb+srv://kidnikid:utlra_mega_spicy_theeki_mirchi@espicehuntingpractice-qwqid.mongodb.net/wakeup?retryWrites=true&w=majority"
+const db_url = process.env.db_url
 const port = process.env.PORT || 3000
 
 mongoose.connect(db_url, { useNewUrlParser: true, useFindAndModify: false,useUnifiedTopology: true })
@@ -25,9 +25,9 @@ app.use('/ammends', ammendsRouter)
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
 // scheduling DB stuff
-// execScheduler()
-// .then(() => console.log("cron job scheduled"))
-// .catch(err => (console.error("Issue in execScheduler call", err)))
+execScheduler()
+.then(() => console.log("cron job scheduled"))
+.catch(err => (console.error("Issue in execScheduler call", err)))
 
 Article.assignAmmends()
 .then(() => console.log("Ammends assigned to articles"))
