@@ -1,19 +1,4 @@
-PLAN
-- Crowd Source list of Organisations; Filter it through a "process" 
-using "volunteers" which will be incentivized using certificates. Will make an "Overview" dashboard.
 
-- Change.org links
-
-- NOT doing giveindia.org for a focus on directly noticeable problems i.e. 
-a person in Noida wouldn't know problems of rural Rajasthan, but he/she would know problems 
-caused by plastic, pollution and notices/faces them in daily life i.e. has a personal connect.
- 
-- db backup and limited queries to NewsAPI
-
-- Bonus: Analytics middleware
-- Future stuff:
-    - Videos/other media
-    - Volunteer program
 
 
 
@@ -30,11 +15,6 @@ TODOS FROM jivu chat
 
 
 
-What can we do:
-- Take measures on a personal level => write this ourself
-- Donate to organisation =>
-- Approach governement organisations: start petitions => Change.org
-- 
 
 Data Schema
 

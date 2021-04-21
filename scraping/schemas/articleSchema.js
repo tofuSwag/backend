@@ -4,7 +4,7 @@ const _ = require('lodash')
 const Ammend = require('../models/ammendModel');
 const { random } = require('lodash');
 
-const apikey = "0744dcd782004b63a83a55a58ceb9f63" // this.is.rahul.tandon walli
+const apikey = process.env.news_api_key
 
 const categories = [
     "Pollution",
@@ -97,7 +97,7 @@ articleSchema.statics.getSources = async function() {
     const options = {
         headers: {'X-Api-Key': apikey}
       };
-    let url = "https://newsapi.org/v2/sources?language=en&apiKey=009dc0c908d54a30859d80e6f8f3085f"
+    let url = `https://newsapi.org/v2/sources?language=en&apiKey=${apikey}`
     try {
         const response = await axios.get(url, options);
     } catch (error) {

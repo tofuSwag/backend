@@ -25,7 +25,7 @@ average salary (after tax), 1%, average annual raise
 yearsWorking
 price = 1% of (average salary + yearsWorking * avgAnnualRaise)
 
-
+---------------------------------------------------------
 
 
 
