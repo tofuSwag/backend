@@ -5,5 +5,4 @@ const articleSchema = require('../schemas/articleSchema')
 // collections will be lowercase in db, but uppercase in our variables
 const Article = mongoose.model('article', articleSchema) 
 
-
 module.exports = Article

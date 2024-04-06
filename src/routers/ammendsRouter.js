@@ -13,6 +13,7 @@ router.get('/getAmmends', async (req, res) => {
         res.send('An error occured in the STANDARD /getAmmends endpoint handler')
     }
 })
+
 router.get('/getAmmends/:lat/:long', async (req, res) => {
     try {
         let lat = req.params.lat
@@ -35,10 +36,16 @@ router.get('/getAmmends/:lat/:long', async (req, res) => {
 router.post('/makeAmmend/tofuSwagHiddenEndpoint', async (req, res) => {
     try {
         let userObj = req.body
-        
         if (!userObj) res.status(400).send("Need to send ammend details in body of post request")
-        
-        await Ammend.addMasterAmmend(userObj)
+        try {
+            if (Array.isArray(userObj)) {
+                userObj.forEach(async (el) => await Ammend.addMasterAmmend(el))
+            } else {
+                await Ammend.addMasterAmmend(userObj)
+            }   
+        } catch (err) {
+            console.error("Error in /makeAmmend/tofuSwagHiddenEndpoint", err)
+        }
         res.send("Ammend added to DB.")
         
     }
