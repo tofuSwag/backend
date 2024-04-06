@@ -128,7 +128,7 @@ articleSchema.statics.assignAmmends = async function() {
     
 
     let allArticles = await this.find({})
-    
+
     /*
     Chose to use .map because 1-to-1 ratio would  work here
     and it is async-await aware
@@ -137,9 +137,7 @@ articleSchema.statics.assignAmmends = async function() {
    for (var index = 0; index < allArticles.length; index++)
    {
         let article = allArticles[index]
-        // let random_num = Math.floor(Math.random() * allAmmends.length)
-        // console.log(allAmmends)
-        let random_ammend = allAmmends[article.category][0];
+        let random_ammend = allAmmends[article.category];
 
         article.volunteerLink = random_ammend.volunteerLink
         article.donateLink = random_ammend.donateLink

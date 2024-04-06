@@ -68,7 +68,7 @@ ammendSchema.statics.addProspectiveAmmend = async function(userObj) {
    try {
         obj = _.pick(userObj, ['homepageLink', 'baseUSDAmount', 'type', 'category', 'description', 'scope', 'coordinates'])
         
-        obj.geohash = geohash.encode(obj.lat, obj.long)
+        obj.geohash = geohash.encode(obj.coordinates.lat, obj.coordinates.long)
         obj.type = "contribute"
         // status will be UNVERIFIED by default
 
