@@ -10,15 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": ">=0.21.1",
+    "axios": "^1.6.8",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "lodash": "^4.17.20",
-    "mongoose": "^5.10.15",
+    "express": "^4.19.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.13.22",
     "ngeohash": "^0.6.3",
     "node-cron": "^2.0.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.22"
   }
 }
