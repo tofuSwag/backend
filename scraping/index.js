@@ -8,7 +8,7 @@ const articlesRouter = require('./routers/articlesRouter')
 const ammendsRouter = require('./routers/ammendsRouter.js')
 const Article = require('./models/articleModel')
 
-const db_url = process.env.db_url
+const db_url = process.env.db_url || "mongodb://localhost:27017"
 const port = process.env.PORT || 3000
 
 mongoose.connect(db_url, { useNewUrlParser: true, useFindAndModify: false,useUnifiedTopology: true })

@@ -4,7 +4,7 @@ const Article = require('../models/articleModel')
 
 
 router.get('/', (req, res) => {
-    res.send('aur ji pranam')
+    res.send('Hello World! The actual news is available at `/getNews`')
 })
 
 

@@ -1,7 +1,5 @@
 const cron = require('node-cron')
-const {Ammend} = require('./models/ammendModel')
-const {Article} = require('./models/articleModel')
-
+const { Article } = require('./models/articleModel')
 
 async function execScheduler() {
     try {
@@ -26,5 +24,13 @@ function emptyDb() {
     .catch(err => console.error("Error when calling emptyDb", err))
 }
 */
+
+Article.addArticlesFromScratch()
+.then(res => {
+    console.log("Articles added.", res)
+    Article.pruneArticles()
+})
+.then(res => console.log("Articles pruned"))
+.catch(err => console.error("Error while adding Artciles From Scratch"))
 
 module.exports = execScheduler

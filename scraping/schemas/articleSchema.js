@@ -4,7 +4,11 @@ const _ = require('lodash')
 const Ammend = require('../models/ammendModel');
 const { random } = require('lodash');
 
-const apikey = process.env.news_api_key
+// enforce that the API key is defined.
+if (! process.env.NEWS_API_KEY) {   
+    throw new Error("new_api_key not defined.")
+}
+const apikey = process.env.NEWS_API_KEY
 
 const categories = [
     "Pollution",
