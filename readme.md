@@ -2,11 +2,11 @@
 
 ## TL;DR
 
-> The links to our deliverables (app's .apk, video) are linked in the organisation's description. Most people read news about bad stuff happening in the world (caused by humans), and then go to Youtube, Spotify, Netlify.We also provide solutions for you to make changes in the same platform.
+> The links to our deliverables (app's .apk, video) are linked in the organisation's description. Most people read news about bad stuff happening in the world (caused by humans), and then go to Youtube, Spotify, Netlify. We also provide solutions for you to make changes in the same platform.
 
 ## Problem
 
-> People read about all the bad stuff humands have caused, but don't do anything about after reading.
+> People read about all the bad stuff humans have caused, but don't do anything about it after reading.
 
 ## Solution
 
@@ -14,7 +14,7 @@ We indicate the problem to them while also giving them viable solutions
 
 ## "How did you go about solving it?"
 
-First, we asked the question what can any person do about the stuff humands have done/are doing wrong.
+First, we asked the question what can any person do about the stuff humans have done/are doing wrong.
 Quick Googling and some intutive answers results in the following
 
 What can we do:
@@ -29,7 +29,7 @@ Next we prioritised out of these 3 and decided that `organisations` should be th
 
 - We made a cross platform application (iOS may have _some_ glitches).
 - It has 3 tabs: Repercussions, Ammends, You
-- Repercussions: lists all the problems across 7 spheres (listed below). Each problem links to a options to solve the problem, namely by either donating or volunteering at an organisation for the respective problem:
+- Repercussions: lists all the problems across 7 spheres (listed below). Each problem links to options to solve the problem, namely by either donating or volunteering at an organisation for the respective problem:
   - Pollution
   - Deforestation
   - Food Waste
@@ -42,7 +42,7 @@ Next we prioritised out of these 3 and decided that `organisations` should be th
 
 # The tech part of the solution
 
-- App: Flutter,
+- App: Flutter
 - Backend:
   - Express.js
   - Mongoose
@@ -72,13 +72,13 @@ Presence to check up OR Criteria to look at
 We're already talked about crowd sourcing a list of organisations. We've also described directly above a filteration "process". What we propose now is making it autonmous so that when we're busy with Boards, or pass out of school the app doesn't stop. This can be done through **volunteers** which will be incentivized using **certificates**. (We can make a certificate generator for the same). They will be responsible for
 
 - Reviewing the suggestions
-- Researching and writing for the `Habits` on the Ammends tab.
+- Researching and writing for the `Habits` section on the Ammends tab.
 
 They will be incentivised through these certificates which can be a form of **Community Service/Unpaid Internship for them**
 
 - Will make an "Overview" dashboard to handle these volunteers and all the "company-like" parts of the application.
 
-- (Just an idea) _Backend_ & Privacy focussed Analytics middleware: To figure out how well the application is doing. We though we could hash the IP address of the user and count unique users in the same way.
+- (Just an idea) _Backend_ & Privacy focussed Analytics middleware: To figure out how well the application is doing. We thought we could hash the IP address of the user and count unique users in the same way.
 
 # FAQs
 
